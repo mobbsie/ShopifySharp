@@ -38,5 +38,17 @@ namespace ShopifySharp
         /// </summary>
         [JsonProperty("subtotal")]
         public decimal? SubTotal { get; set; }
+
+        /// <summary>
+        /// The restock type of the line item.
+        /// </summary>
+        [JsonProperty("restock_type")]
+        public string RestockType { get; set; }
+
+        /// <summary>
+        /// The location of the stock to be restocked.
+        /// </summary>
+        [JsonProperty("location_id")]
+        public long? LocationId { get; set; }
     }
 }
