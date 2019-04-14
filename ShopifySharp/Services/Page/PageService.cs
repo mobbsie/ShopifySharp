@@ -61,7 +61,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"pages/{pageId}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }

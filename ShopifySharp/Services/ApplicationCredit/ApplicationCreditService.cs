@@ -25,7 +25,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"application_credits.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }
@@ -42,7 +42,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"application_credits/{id}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }

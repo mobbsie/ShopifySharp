@@ -60,7 +60,7 @@ namespace ShopifySharp
                 req.QueryParams.Add("since_id", sinceId.Value);
             }
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }
@@ -79,7 +79,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"products/{productId}/images/{imageId}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }

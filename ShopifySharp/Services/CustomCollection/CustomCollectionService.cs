@@ -80,7 +80,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"custom_collections/{customCollectionId}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }

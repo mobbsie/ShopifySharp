@@ -119,7 +119,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"metafields/{metafieldId}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }

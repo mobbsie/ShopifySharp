@@ -41,7 +41,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"orders/{orderId}/refunds/{refundId}.json");
 
-            if (string.IsNullOrEmpty(fields) == false)
+            if (System.String.IsNullOrEmpty(fields) == false)
             {
                 req.QueryParams.Add("fields", fields);
             }

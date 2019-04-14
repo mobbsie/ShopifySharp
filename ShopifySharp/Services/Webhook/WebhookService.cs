@@ -29,12 +29,12 @@ namespace ShopifySharp
         {
             var req = PrepareRequest("webhooks/count.json");
 
-            if (!string.IsNullOrEmpty(address))
+            if (!System.String.IsNullOrEmpty(address))
             {
                 req.QueryParams.Add("address", address);
             }
 
-            if (!string.IsNullOrEmpty(topic))
+            if (!System.String.IsNullOrEmpty(topic))
             {
                 req.QueryParams.Add("topic", topic);
             }
@@ -69,7 +69,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"webhooks/{webhookId}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }

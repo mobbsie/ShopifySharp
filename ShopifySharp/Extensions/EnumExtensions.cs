@@ -50,7 +50,7 @@ namespace ShopifySharp
                     list.Add(EnumExtensions.ToSerializedString(enumItem as Enum));
                 }
             }
-            return string.Join(",", list);
+            return System.String.Join(",", list);
         }
     }
 }

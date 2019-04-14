@@ -25,7 +25,7 @@ namespace ShopifySharp.Infrastructure
             });
             var ub = new UriBuilder(Url)
             {
-                Query = string.Join("&", query)
+                Query = System.String.Join("&", query)
             };
 
             return ub.Uri;

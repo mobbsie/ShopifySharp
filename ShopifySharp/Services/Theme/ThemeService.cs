@@ -44,7 +44,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"themes/{themeId}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }
@@ -57,7 +57,7 @@ namespace ShopifySharp
             var req = PrepareRequest("themes.json");
             var body = theme.ToDictionary();
 
-            if (!string.IsNullOrEmpty(sourceUrl))
+            if (!System.String.IsNullOrEmpty(sourceUrl))
             {
                 body.Add("src", sourceUrl);
             }

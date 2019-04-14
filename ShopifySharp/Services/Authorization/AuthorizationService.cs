@@ -43,7 +43,7 @@ namespace ShopifySharp
         {
             string s = values.FirstOrDefault();
 
-            if (string.IsNullOrEmpty(s))
+            if (System.String.IsNullOrEmpty(s))
             {
                 return "";
             }
@@ -94,7 +94,7 @@ namespace ShopifySharp
             // Reference: https://docs.shopify.com/api/guides/authentication/oauth#making-authenticated-requests
             var hmacValues = querystring.FirstOrDefault(kvp => kvp.Key == "hmac").Value;
 
-            if (string.IsNullOrEmpty(hmacValues) || hmacValues.Count() < 1)
+            if (System.String.IsNullOrEmpty(hmacValues) || hmacValues.Count() < 1)
             {
                 return false;
             }
@@ -148,13 +148,13 @@ namespace ShopifySharp
             // signature itself). Then, hash it with the secret key.
             var signatureValues = querystring.FirstOrDefault(kvp => kvp.Key == "signature").Value;
 
-            if (string.IsNullOrEmpty(signatureValues) || signatureValues.Count() < 1)
+            if (System.String.IsNullOrEmpty(signatureValues) || signatureValues.Count() < 1)
             {
                 return false;
             }
 
             string signature = signatureValues.First();
-            string kvps = PrepareQuerystring(querystring, string.Empty);
+            string kvps = PrepareQuerystring(querystring, System.String.Empty);
             var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(shopifySecretKey));
             var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(string.Join(null, kvps)));
 
@@ -197,7 +197,7 @@ namespace ShopifySharp
         {
             var hmacHeaderValues = requestHeaders.FirstOrDefault(kvp => kvp.Key.Equals("X-Shopify-Hmac-SHA256", StringComparison.OrdinalIgnoreCase)).Value;
 
-            if (string.IsNullOrEmpty(hmacHeaderValues) || hmacHeaderValues.Count() < 1)
+            if (System.String.IsNullOrEmpty(hmacHeaderValues) || hmacHeaderValues.Count() < 1)
             {
                 return false;
             }
@@ -280,7 +280,7 @@ namespace ShopifySharp
                 new KeyValuePair<string, string>("redirect_uri", redirectUrl),
             };
 
-            if (string.IsNullOrEmpty(state) == false)
+            if (System.String.IsNullOrEmpty(state) == false)
             {
                 qs.Add(new KeyValuePair<string, string>("state", state));
             }

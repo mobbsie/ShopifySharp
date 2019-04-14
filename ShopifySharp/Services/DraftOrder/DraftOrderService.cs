@@ -53,7 +53,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"draft_orders/{id}.json");
 
-            if (string.IsNullOrEmpty(fields) == false)
+            if (System.String.IsNullOrEmpty(fields) == false)
             {
                 req.QueryParams.Add("fields", fields);
             }

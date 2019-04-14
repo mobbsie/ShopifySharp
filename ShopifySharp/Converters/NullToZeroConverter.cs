@@ -19,7 +19,7 @@ namespace ShopifySharp.Converters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            if (reader.Value == null || string.IsNullOrEmpty(reader.Value?.ToString())) return 0;
+            if (reader.Value == null || System.String.IsNullOrEmpty(reader.Value?.ToString())) return 0;
             return Convert.ToInt32(reader.Value);
         }
 

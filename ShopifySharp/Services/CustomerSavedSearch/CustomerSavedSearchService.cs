@@ -59,7 +59,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"{RootResource}/{customerSearchId}.json");
 
-            if (string.IsNullOrEmpty(fields) == false)
+            if (System.String.IsNullOrEmpty(fields) == false)
             {
                 req.QueryParams.Add("fields", fields);
             }
@@ -79,7 +79,7 @@ namespace ShopifySharp
             var req = PrepareRequest($"{RootResource}.json");
             req.QueryParams.Add("query", query);
 
-            if (!string.IsNullOrEmpty(sinceId))
+            if (!System.String.IsNullOrEmpty(sinceId))
             {
                 req.QueryParams.Add("since_id", sinceId);
             }
@@ -99,7 +99,7 @@ namespace ShopifySharp
         /// <returns>The new <see cref="Customer"/>.</returns>
         public virtual Task<CustomerSavedSearch> CreateAsync(CustomerSavedSearch customerSavedSearch)
         {
-            if (string.IsNullOrWhiteSpace(customerSavedSearch.Name))
+            if (System.String.IsNullOrWhiteSpace(customerSavedSearch.Name))
             {
                 throw new ArgumentException("Name property is required", nameof(customerSavedSearch));
             }

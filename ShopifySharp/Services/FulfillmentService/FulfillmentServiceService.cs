@@ -28,7 +28,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"fulfillment_services.json");
 
-            if (!string.IsNullOrEmpty(scope))
+            if (!System.String.IsNullOrEmpty(scope))
             {
                 req.QueryParams.Add("scope", scope);
             }
@@ -46,7 +46,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"fulfillment_services/{fulfillmentServiceId}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }

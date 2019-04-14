@@ -108,7 +108,7 @@ namespace ShopifySharp
         {
             var msg = new CloneableRequestMessage(uri.ToUri(), method, content);
 
-            if (!string.IsNullOrEmpty(_AccessToken))
+            if (!System.String.IsNullOrEmpty(_AccessToken))
             {
                 msg.Headers.Add("X-Shopify-Access-Token", _AccessToken);
             }
@@ -243,8 +243,7 @@ namespace ShopifySharp
             else
             {
                 var firstError = errors.First();
-
-                message = $"{firstError.Key}: {string.Join(", ", firstError.Value)}";
+                message = $"{firstError.Key}: {System.String.Join(", ", firstError.Value)}";
             }
 
             throw new ShopifyException(code, errors, message, rawResponse, requestId);
@@ -256,7 +255,7 @@ namespace ShopifySharp
         /// <returns>Returns null if the JSON could not be parsed into an error.</returns>
         public static Dictionary<string, IEnumerable<string>> ParseErrorJson(string json)
         {
-            if (string.IsNullOrEmpty(json))
+            if (System.String.IsNullOrEmpty(json))
             {
                 return null;
             }
@@ -265,7 +264,7 @@ namespace ShopifySharp
 
             try
             {
-                var parsed = JToken.Parse(string.IsNullOrEmpty(json) ? "{}" : json);
+                var parsed = JToken.Parse(System.String.IsNullOrEmpty(json) ? "{}" : json);
 
                 // Errors can be any of the following:
                 // 1. { errors: "some error message"}

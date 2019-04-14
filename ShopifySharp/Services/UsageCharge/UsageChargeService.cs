@@ -50,7 +50,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"recurring_application_charges/{recurringChargeId}/usage_charges/{id}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }
@@ -68,7 +68,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"recurring_application_charges/{recurringChargeId}/usage_charges.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }

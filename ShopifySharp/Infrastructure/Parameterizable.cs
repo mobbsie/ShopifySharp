@@ -62,7 +62,7 @@ namespace ShopifySharp
         {
             if (value is IEnumerable<long>)
             {
-                return new KeyValuePair<string, object>(propName, string.Join(",", value as IEnumerable<long>));
+                return new KeyValuePair<string, object>(propName, System.String.Join(",", value as IEnumerable<long>));
             }
 
             Type valueType = value.GetType();

@@ -29,7 +29,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest("script_tags/count.json");
 
-            if (!string.IsNullOrEmpty(src))
+            if (!System.String.IsNullOrEmpty(src))
             {
                 req.QueryParams.Add("src", src);
             }
@@ -63,7 +63,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"script_tags/{tagId}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }

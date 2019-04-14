@@ -29,12 +29,12 @@ namespace ShopifySharp
         {
             var req = PrepareRequest("redirects/count.json");
 
-            if (!string.IsNullOrEmpty(path))
+            if (!System.String.IsNullOrEmpty(path))
             {
                 req.QueryParams.Add("path", path);
             }
 
-            if (!string.IsNullOrEmpty(target))
+            if (!System.String.IsNullOrEmpty(target))
             {
                 req.QueryParams.Add("target", target);
             }
@@ -69,7 +69,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"redirects/{redirectId}.json");
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 req.QueryParams.Add("fields", fields);
             }

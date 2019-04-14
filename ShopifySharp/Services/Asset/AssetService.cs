@@ -31,7 +31,7 @@ namespace ShopifySharp
             //Add the proper asset querystring
             req = SetAssetQuerystring(req, key, themeId);
 
-            if (string.IsNullOrEmpty(fields) == false)
+            if (System.String.IsNullOrEmpty(fields) == false)
             {
                 req.QueryParams.Add("fields", fields);
             }
@@ -50,7 +50,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"themes/{themeId}/assets.json");
 
-            if (string.IsNullOrEmpty(fields) == false)
+            if (System.String.IsNullOrEmpty(fields) == false)
             {
                 req.QueryParams.Add("fields", fields);
             }

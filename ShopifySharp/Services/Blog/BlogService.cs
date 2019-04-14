@@ -33,12 +33,12 @@ namespace ShopifySharp
                 request.QueryParams.Add("since_id", sinceId.Value);
             }
 
-            if (!string.IsNullOrEmpty(handle))
+            if (!System.String.IsNullOrEmpty(handle))
             {
                 request.QueryParams.Add("handle", handle);
             }
 
-            if (!string.IsNullOrEmpty(fields))
+            if (!System.String.IsNullOrEmpty(fields))
             {
                 request.QueryParams.Add("fields", fields);
             }

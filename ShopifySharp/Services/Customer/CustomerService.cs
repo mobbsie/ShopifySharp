@@ -56,7 +56,7 @@ namespace ShopifySharp
         {
             var req = PrepareRequest($"customers/{customerId}.json");
 
-            if (string.IsNullOrEmpty(fields) == false)
+            if (System.String.IsNullOrEmpty(fields) == false)
             {
                 req.QueryParams.Add("fields", fields);
             }
@@ -76,7 +76,7 @@ namespace ShopifySharp
             var req = PrepareRequest("customers/search.json");
             req.QueryParams.Add("query", query);
 
-            if (!string.IsNullOrEmpty(order))
+            if (!System.String.IsNullOrEmpty(order))
             {
                 req.QueryParams.Add("order", order);
             }

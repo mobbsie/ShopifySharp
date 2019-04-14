@@ -124,7 +124,7 @@ namespace ShopifySharp
             var req = PrepareRequest("gift_cards/search.json");
             req.QueryParams.Add("query", query);
 
-            if (!string.IsNullOrEmpty(order))
+            if (!System.String.IsNullOrEmpty(order))
             {
                 req.QueryParams.Add("order", order);
             }
