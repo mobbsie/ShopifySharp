@@ -105,7 +105,7 @@ namespace ShopifySharp
             var hash = hmacHasher.ComputeHash(Encoding.UTF8.GetBytes(string.Join("&", kvps)));
 
             //Convert bytes back to string, replacing dashes, to get the final signature.
-            var calculatedSignature = BitConverter.ToString(hash).Replace("-", "");
+            var calculatedSignature = BitConverter.ToString(hash).Replace("-", System.String.Empty);
 
             //Request is valid if the calculated signature matches the signature from the querystring.
             return calculatedSignature.ToUpper() == hmac.ToUpper();
@@ -159,7 +159,7 @@ namespace ShopifySharp
             var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(string.Join(null, kvps)));
 
             //Convert bytes back to string, replacing dashes, to get the final signature.
-            var calculatedSignature = BitConverter.ToString(hash).Replace("-", "");
+            var calculatedSignature = BitConverter.ToString(hash).Replace("-", System.String.Empty);
 
             //Request is valid if the calculated signature matches the signature from the querystring.
             return calculatedSignature.ToUpper() == signature.ToUpper();
